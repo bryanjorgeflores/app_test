@@ -1,4 +1,4 @@
-# Fulltimeforce Test
+# App Test
 
 A Flutter project for demonstrating an application using ReqRes and JSONPlaceholder API.
 
