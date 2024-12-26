@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "fulltimeforce_test",
+            "name": "app_test",
             "request": "launch",
             "type": "dart",
         },
         {
-            "name": "fulltimeforce_test (debug mode)",
+            "name": "app_test (debug mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug",
         },
         {
-            "name": "fulltimeforce_test (profile mode)",
+            "name": "app_test (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"

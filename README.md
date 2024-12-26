@@ -13,8 +13,8 @@ A Flutter project for demonstrating an application using ReqRes and JSONPlacehol
 ### Installation
 
 1. Clone the repository:
-   git clone https://github.com/bryanjorgeflores/fulltimeforce_test.git
-   cd fulltimeforce_test
+   git clone https://github.com/bryanjorgeflores/app_test.git
+   cd app_test
 
 2. Get the dependencies:
    flutter pub get
