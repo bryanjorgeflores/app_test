@@ -1,4 +1,4 @@
-package com.example.fulltimeforce_test
+package com.example.apptest
 
 import io.flutter.embedding.android.FlutterActivity
 
