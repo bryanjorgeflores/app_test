@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build IPA",
+            "type": "shell",
+            "command": "[ -d Payload ] && rm -r Payload; [ -f 'App Test.zip' ] && rm 'App Test.zip'; [ -f 'App Test.ipa' ] && rm 'App Test.ipa'; flutter build ios --release && mkdir -p Payload && cp -R build/ios/iphoneos/Runner.app Payload/ && VERSION_AND_BUILD=$(grep 'version:' ./pubspec.yaml | cut -d ' ' -f 2) && APP_VERSION=$(echo $VERSION_AND_BUILD | cut -d '+' -f 1) && BUILD_NUMBER=$(echo $VERSION_AND_BUILD | cut -d '+' -f 2) && zip -r \"App Test $APP_VERSION+$BUILD_NUMBER.zip\" Payload && mv \"App Test $APP_VERSION+$BUILD_NUMBER.zip\" \"App Test $APP_VERSION+$BUILD_NUMBER.ipa\" && mkdir -p Generated && mv \"App Test $APP_VERSION+$BUILD_NUMBER.ipa\" Generated/ && echo $(pwd)/Generated/\"App Test $APP_VERSION+$BUILD_NUMBER.ipa\"",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "build Android",
+            "type": "shell",
+            "command": "flutter build apk --release && VERSION_AND_BUILD=$(grep 'version:' ./pubspec.yaml | cut -d ' ' -f 2) && APP_VERSION=$(echo $VERSION_AND_BUILD | cut -d '+' -f 1) && BUILD_NUMBER=$(echo $VERSION_AND_BUILD | cut -d '+' -f 2) && mkdir -p Generated/\"$APP_VERSION - $BUILD_NUMBER\" && mv build/app/outputs/flutter-apk/app-release.apk Generated/\"$APP_VERSION - $BUILD_NUMBER/App Test $APP_VERSION+$BUILD_NUMBER.apk\" && echo $(pwd)/Generated/\"$APP_VERSION - $BUILD_NUMBER/App Test $APP_VERSION+$BUILD_NUMBER.apk\"",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}

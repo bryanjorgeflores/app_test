@@ -22,6 +22,10 @@ A Flutter project for demonstrating an application using ReqRes and JSONPlacehol
 3. Run the application:
    flutter run
 
+### Generating IPA and APK
+
+The IPA and APK files are generated in a folder called `Generated`.
+
 ## Technical Decisions
 
 ### Packages
